@@ -16,8 +16,8 @@ export const CLOSE_SNACKBAR = 'CLOSE_SNACKBAR';
 
 export const navigate = (path) => (dispatch) => {
   // Extract the page name from path.
-  const page = path === '/' ? 'view1' : path.slice(1);
-
+  const page = path === '/' ? 'dashboard' : path.slice(1);
+  console.log(page);
   // Any other info you might want to extract from the path (like page type),
   // you can do here
   dispatch(loadPage(page));
@@ -28,10 +28,10 @@ export const navigate = (path) => (dispatch) => {
 
 const loadPage = (page) => (dispatch) => {
   switch(page) {
-    case 'view1':
-      import('../components/my-view1.js').then((module) => {
+    case 'dashboard':
+      import('../components/dashboard-view.js').then((module) => {
         // Put code in here that you want to run every time when
-        // navigating to view1 after my-view1.js is loaded.
+        // navigating to view1 after dashboard-view.js is loaded.
       });
       break;
     case 'view2':
